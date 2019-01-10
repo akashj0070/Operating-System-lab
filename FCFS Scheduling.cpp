@@ -6,7 +6,7 @@ main()
   int pr;
   cout<<"Enter no. of processes\n\n";
   cin>>pr;
-	int at[pr],wt[pr],et[pr],ct[pr],tat[pr];
+	int at[pr],wt[pr],et[pr],ct[pr],tat[pr]; float avgtat=0,avgwt=0;
 	cout<<"Enter Arrival time of all the processes\n\n";
 	for(int i=0;i<pr;i++) cin>>at[i];
 	cout<<"Enter Execution or burst time of processes\n\n";
@@ -23,19 +23,28 @@ main()
 		ct[i]=ct[i-1]+et[i];
 	}
 	
+	//Turn around time
 		for(int i=0;i<pr;i++)
 	tat[i]=ct[i]-at[i];
 		
+		//Waiting time
 	for(int i=0;i<pr;i++)
 	wt[i]=tat[i]-et[i];
 
+	//avg tat
 	
+	for(int i=0;i<pr;i++)
+	avgtat=avgtat+tat[i];
+	
+		for(int i=0;i<pr;i++)
+	avgwt=avgwt+wt[i];
 	
 		cout<<"TAT time    Waiting time      completion time\n";
 	for(int i=0;i<pr;i++)
 	cout<<tat[i]<<"           "<<wt[i]<<"                  "<<ct[i]<<endl<<endl;
 	
-
+cout<<"Average TAT is  "<<avgtat/pr<<endl;
+cout<<"Average WT is   "<<avgwt/pr<<endl;
 	getch();
 	
 }
