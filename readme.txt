@@ -1,3 +1,2 @@
 learning git 
-:qw
-
+Creating changes in readme.txt file from github
