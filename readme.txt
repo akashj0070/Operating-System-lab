@@ -1,2 +1,2 @@
-learning git on windows
+learning git 
 Creating changes in readme.txt file from github
